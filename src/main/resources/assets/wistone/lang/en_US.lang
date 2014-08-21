@@ -1,0 +1,5 @@
+tile.wistone.redstoneTransmitter.name=Redstone Transmitter
+tile.wistone.redstoneReceiver.name=Redstone Receiver
+gui.wistone.freq.short=Freq.
+gui.wistone.freq=Frequency
+gui.wistone.strength=Strength
