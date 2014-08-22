@@ -10,8 +10,7 @@ import mrtjp.projectred.api.ProjectRedAPI;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraftforge.common.util.ForgeDirection;
-import pl.asie.lib.api.provider.IBundledRedstoneProvider;
-import pl.asie.lib.api.tile.IProvidesBundledRedstone;
+import pl.asie.lib.api.tile.IBundledRedstoneProvider;
 import pl.asie.lib.block.TileEntityBase;
 import pl.asie.lib.util.BlockCoord;
 import pl.asie.wistone.Wistone;
@@ -24,10 +23,10 @@ import pl.asie.lib.block.BlockBase;
 @Optional.InterfaceList({
 	@Optional.Interface(iface = "li.cil.oc.api.network.SimpleComponent", modid = "OpenComputers")
 })
-public class TileRedstoneTransmitter extends TileBaseTransceiverRedstone implements IDataSource, IBundledRedstoneProvider, IProvidesBundledRedstone, SimpleComponent {
+public class TileRedstoneTransmitter extends TileBaseTransceiverRedstone implements IDataSource, IBundledRedstoneProvider, SimpleComponent {
 	public TileRedstoneTransmitter() {
 		super(true);
-		this.registerBundledRedstoneProvider(this);
+		this.registerBundledRedstone(this);
 	}
 
 	private int rsIn = -1;
@@ -87,7 +86,7 @@ public class TileRedstoneTransmitter extends TileBaseTransceiverRedstone impleme
 	}
 
 	@Override
-	public boolean canConnectTo(int arg0, int arg1) {
+	public boolean canBundledConnectTo(int arg0, int arg1) {
 		return true;
 	}
 

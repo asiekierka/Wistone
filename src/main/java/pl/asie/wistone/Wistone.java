@@ -36,7 +36,7 @@ import cpw.mods.fml.common.event.FMLServerAboutToStartEvent;
 import cpw.mods.fml.common.network.NetworkRegistry;
 import cpw.mods.fml.common.registry.GameRegistry;
 
-@Mod(modid="wistone", name="Wistone", version="0.0.4", dependencies="required-after:asielib")
+@Mod(modid="wistone", name="Wistone", version="0.1.0", dependencies="required-after:asielib")
 public class Wistone {
 	public Configuration config;
 	public static final Random rand = new Random();

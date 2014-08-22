@@ -22,10 +22,10 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.World;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.util.ForgeDirection;
-import pl.asie.lib.api.tile.IProvidesBattery;
+import pl.asie.lib.api.tile.IBatteryProvider;
 import pl.asie.lib.block.BlockBase;
 import pl.asie.lib.block.TileEntityBase;
-import pl.asie.lib.tile.BatteryProviderBasic;
+import pl.asie.lib.tile.BatteryBasic;
 import pl.asie.lib.tile.TileMachine;
 import pl.asie.lib.util.BlockCoord;
 import pl.asie.lib.util.EnergyConverter;
@@ -39,7 +39,7 @@ import pl.asie.wistone.util.ReceptionUtil;
 import cpw.mods.fml.common.Loader;
 import cpw.mods.fml.common.Optional;
 
-public class TileBaseTransceiver extends TileMachine implements IDataTransceiver, IDataSource, IProvidesBattery {
+public class TileBaseTransceiver extends TileMachine implements IDataTransceiver, IDataSource, IBatteryProvider {
 	private BlockCoord l;
 	private int frequency = 1;
 	private float powerStrength = 1.0f;
@@ -49,11 +49,11 @@ public class TileBaseTransceiver extends TileMachine implements IDataTransceiver
 	public double _client_energy = 0.0;
 	
 	protected boolean isRunning = false;
-	protected BatteryProviderBasic battery = new BatteryProviderBasic(10000.0);
+	protected BatteryBasic battery = new BatteryBasic(10000.0);
 	
 	public TileBaseTransceiver(boolean isTransmitter) {
 		super();
-		this.registerBatteryProvider(battery);
+		this.registerBattery(battery);
 		this.isTransmitter = isTransmitter;
 	}
 	

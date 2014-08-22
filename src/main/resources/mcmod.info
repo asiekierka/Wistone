@@ -3,7 +3,7 @@
   "modid": "wistone",
   "name": "Wistone",
   "description": "A next-generation wireless redstone mod.",
-  "version": "0.0.2",
+  "version": "0.1.0",
   "credits": "asie",
   "logoFile": "",
   "mcversion": "1.7.10",

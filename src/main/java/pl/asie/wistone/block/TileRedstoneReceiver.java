@@ -10,8 +10,7 @@ import mods.immibis.redlogic.api.wiring.IWire;
 import mrtjp.projectred.api.IBundledTile;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraftforge.common.util.ForgeDirection;
-import pl.asie.lib.api.provider.IBundledRedstoneProvider;
-import pl.asie.lib.api.tile.IProvidesBundledRedstone;
+import pl.asie.lib.api.tile.IBundledRedstoneProvider;
 import pl.asie.lib.block.TileEntityBase;
 import pl.asie.lib.util.BlockCoord;
 import pl.asie.wistone.Wistone;
@@ -23,10 +22,10 @@ import cpw.mods.fml.common.Optional;
 @Optional.InterfaceList({
 	@Optional.Interface(iface = "li.cil.oc.api.network.SimpleComponent", modid = "OpenComputers")
 })
-public class TileRedstoneReceiver extends TileBaseTransceiverRedstone implements IBundledRedstoneProvider, IProvidesBundledRedstone, SimpleComponent {
+public class TileRedstoneReceiver extends TileBaseTransceiverRedstone implements IBundledRedstoneProvider, SimpleComponent {
 	public TileRedstoneReceiver() {
 		super(false);
-		this.registerBundledRedstoneProvider(this);
+		this.registerBundledRedstone(this);
 	}
 	
 	private short rsPrev = -1;
@@ -100,7 +99,7 @@ public class TileRedstoneReceiver extends TileBaseTransceiverRedstone implements
 	}
 
 	@Override
-	public boolean canConnectTo(int arg0, int arg1) {
+	public boolean canBundledConnectTo(int arg0, int arg1) {
 		return true;
 	}
 
